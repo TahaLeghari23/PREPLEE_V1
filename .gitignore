@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+backend/target/
+backend/.m2repo/
+.idea/
+*.iml
+

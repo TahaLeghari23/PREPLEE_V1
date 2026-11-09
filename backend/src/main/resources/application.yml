@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/preplee_lite}
+    username: ${DB_USERNAME:preplee}
+    password: ${DB_PASSWORD:preplee}
+  flyway:
+    enabled: true
+
+app:
+  ai:
+    api-key: ${AI_API_KEY:}
+    api-url: ${AI_API_URL:https://api.openai.com/v1/chat/completions}
+    model: ${AI_MODEL:gpt-4o-mini}

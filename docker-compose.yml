@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: preplee_lite
+      POSTGRES_USER: preplee
+      POSTGRES_PASSWORD: preplee
+    ports:
+      - "5432:5432"
+    volumes:
+      - preplee_lite_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U preplee -d preplee_lite"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  preplee_lite_data:
